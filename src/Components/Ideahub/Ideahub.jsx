@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
-import name from "../../assests/Name Tag Woman Horizontal.png";
-import Mail from "../../assests/Mail.png";
 import style from "./Ideahub.module.css";
-import Phone from "../../assests/Phone.png";
-import Briefcase from "../../assests/Briefcase Settings.png"
+
+import  ideahub from "../../assests/IdeaHubideahub_logo.jpg"
+
+import { Editor } from 'primereact/editor';
+
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import BadgeIcon from '@mui/icons-material/Badge';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import WorkIcon from '@mui/icons-material/Work';
+
+
 
 const Ideahub = () => {
+  const [text, setText] = useState('');
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -26,7 +35,8 @@ const Ideahub = () => {
         <div className={style.nav}>
           <div className={style.idea_hub}>
             <p className={style.idea_txt}>
-              I<span>dea</span>H<span>ub</span>
+              <img src={ideahub} alt="ideahub_logo" />
+              {/* I<span>dea</span>H<span>ub</span> */}
             </p>
             <div className={style.alaram}>
               <p className={style.alaramcount}>3</p>
@@ -52,7 +62,8 @@ const Ideahub = () => {
           <form action="" onSubmit={formik.handleSubmit}>
             <div className={style.form_row1}>
               <div className={style.input_with_logo}>
-                <img src={name} alt="" className={style.input_logo} />
+                {/* <img src={name} alt="" className={style.input_logo} /> */}
+                <BadgeIcon className={style.input_logo}/>
 
                 <input
                   type="text"
@@ -65,7 +76,8 @@ const Ideahub = () => {
               </div>
 
               <div className={style.input_with_logo}>
-                <img src={Mail} alt="" className={style.input_logo} />
+                {/* <img src={Mail} alt="" className={style.input_logo} /> */}
+                <MailOutlineIcon className={style.input_logo}/>
                 <input
                   type="email"
                   name="email_id"
@@ -78,7 +90,9 @@ const Ideahub = () => {
             </div>
             <div className={style.form_row2}>
               <div className={style.input_with_logo}>
-                <img src={Phone} alt="" className={style.input_logo} />
+                {/* <img src={Phone} alt="" className={style.input_logo} /> */}
+                <LocalPhoneIcon className={style.input_logo}/>
+
                 <input
                   type="tel"
                   name="mobile"
@@ -90,7 +104,9 @@ const Ideahub = () => {
               </div>
 
               <div className={style.input_with_logo}>
-                <img src={Briefcase} alt="" className={style.input_logo} />
+                {/* <img src={Briefcase} alt="" className={style.input_logo} /> */}
+                < WorkIcon className={style.input_logo}/>
+
                 <select
                   name="select"
                   id="select"
@@ -105,7 +121,7 @@ const Ideahub = () => {
               </div>
             </div>
             <div>
-                <label htmlFor="message" className={style.text_area_label}>Leave a coment</label>
+                {/* <label htmlFor="message" className={style.text_area_label}>Leave a coment</label>
                 <textarea
         id="message"
         name="message"
@@ -115,7 +131,14 @@ const Ideahub = () => {
         cols="187"
         style={{background:"#F3F3F3", border:"none"}}
 
-      />
+      /> */}
+      
+    
+        <div className="card">
+            <Editor value={text} onTextChange={(e) => setText(e.htmlValue)} style={{ height: '320px' }} />
+        </div>
+    
+        
             </div>
             <input type="submit" className={style.submit_button} />
           </form>

@@ -10,7 +10,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import "./siginin.css"
 import { Link } from 'react-router-dom';
-
+import  ideahub from "../../assests/IdeaHubideahub_logo.jpg"
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false)
 
@@ -29,10 +29,11 @@ const Signin = () => {
                       <img src={LogoImg} alt="logo_image" />
                   </div>
                   <div className="txt">
-                      <span className='thick'>I</span>
+                    <img src={ideahub} alt="idea_logo" />
+                      {/* <span className='thick'>I</span>
                       <span>dea </span>
                       <span className='thick'>H</span>
-                      <span>ub</span>
+                      <span>ub</span> */}
                   </div>
               </div>
               <div className="SignInTxtDiv">

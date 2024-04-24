@@ -1,13 +1,18 @@
 import React from 'react'
 import style from './Home.module.css'
 import { Link } from 'react-router-dom'
+import ideahub from "../../assests/IdeaHubideahub_logo.jpg"
+
 const Homepage = () => {
   return (
     <>
     <div className={style.main}>
         <div className={style.nav}>
             <div className={style.idea_hub}>
-                <p className={style.idea_txt}>I<span>dea</span>H<span>ub</span></p>
+                <p className={style.idea_txt}>
+                    <img src={ideahub} alt="ideahub_logo" />
+                    {/* I<span>dea</span>H<span>ub</span> */}
+                    </p>
             </div>
         </div>
         <div className={style.body}>

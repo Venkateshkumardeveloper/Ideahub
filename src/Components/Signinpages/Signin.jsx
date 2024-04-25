@@ -8,9 +8,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import "./siginin.css"
+import style from "./siginin.module.css"
 import { Link } from 'react-router-dom';
 import  ideahub from "../../assests/IdeaHubideahub_logo.jpg"
+import './MUI.css'
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false)
 
@@ -20,15 +21,15 @@ const Signin = () => {
     event.preventDefault();
   };
   return (
-    <div className='signinMain'>
-      <div className="signInLeftDiv">
-        <div className="signInBox">
-            <div className="LogoAndTxtBox">
-              <div className="IdeaHubDiv">
-                  <div className="logoDiv">
+    <div className={style.signinMain}>
+      <div className={style.signInLeftDiv}>
+        <div className={style.signInBox}>
+            <div className={style.LogoAndTxtBox}>
+              <div className={style.IdeaHubDiv}>
+                  <div className={style.logoDiv}>
                       <img src={LogoImg} alt="logo_image" />
                   </div>
-                  <div className="txt">
+                  <div className={style.txt}>
                     <img src={ideahub} alt="idea_logo" />
                       {/* <span className='thick'>I</span>
                       <span>dea </span>
@@ -36,21 +37,22 @@ const Signin = () => {
                       <span>ub</span> */}
                   </div>
               </div>
-              <div className="SignInTxtDiv">
-                  <div className="signInTxt">Sign In</div>
-                  <div className="signInExtraTxt">Login to stay connected</div>
+              <div className={style.SignInTxtDiv}>
+                  <div className={style.signInTxt}>Sign In</div>
+                  <div className={style.signInExtraTxt}>Login to stay connected</div>
               </div>
             </div>
-            <div className="inputParDiv">
-              <FormControl className='signInInput'  size='medium' sx={{ width: '50ch','@media (max-width: 600px)': {
+            <div className={style.inputParDiv}>
+              <FormControl className={style.signInInput}  size='medium' sx={{ width: '50ch','@media (max-width: 600px)': {
       width: '100%', // Change width for smaller screens
     }, }} variant="standard">
-                <label htmlFor="emailSignin">
-                  <span className='starMark'>*</span>
+                <label htmlFor={style.emailSignin}>
+                  <span className={style.starMark}>*</span>
                   <span>Email</span>
                   </label>
                 <OutlinedInput 
                   className='borderless-input'
+                
                   sx={{background:'#F3F3F3'}}
                   id="outlined-adornment-weight"
                   placeholder='email@gmail.com'
@@ -66,7 +68,7 @@ const Signin = () => {
       width: '100%', // Change width for smaller screens
     },}} variant="standard">
                 <label htmlFor="outlined-adornment-password">
-                  <span className='starMark'>*</span>
+                  <span className={style.starMark}>*</span>
                   <span>Password</span>
                 </label>
                 <OutlinedInput
@@ -92,18 +94,18 @@ const Signin = () => {
                   label="Password"
                 />
               </FormControl>
-             <div className="forgtPassTxt">Forgot Password?</div>
-              <button className='SignInbtn'>Sign In</button>
+             <div className={style.forgtPassTxt}>Forgot Password?</div>
+              <button className={style.SignInbtn}>Sign In</button>
             </div>
-            <div className="ParOfDirectToSignUp">
+            <div className={style.ParOfDirectToSignUp}>
               <span>Don't have an account?</span>
               <Link to={"/signup"}>
-              <span className='DarkBlueTxt'>Register</span>
+              <span className={style.DarkBlueTxt}>Register</span>
               </Link>
             </div>
         </div>
       </div>
-      <div className="signInRightDiv">
+      <div className={style.signInRightDiv}>
         <img src={signInRightImg} alt="background_image" />
       </div>
     </div>

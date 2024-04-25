@@ -168,7 +168,7 @@ body {
     flex-direction: column;
 }
 
-@media screen and (max-width: 1028px) {
+@media screen and (max-width: 968px) {
     .signinMain {
         position: relative; /* Ensure the .signinMain div is a positioned parent for the absolute positioned child */
         overflow: hidden;
@@ -181,10 +181,11 @@ body {
         bottom: 0; /* Align the pseudo-element to the bottom */
         right: 0; /* Align the pseudo-element to the right */
         background-image: url(../../assests/idea_svgbackground.png); /* Specify the background image URL */
-        background-size: cover; /* Adjust the background size as needed */
+        background-size: contain; /* Adjust the background size as needed */
         width: 50%; /* Adjust the width of the background */
-        height: 40%; /* Adjust the height of the background */
+        height: 70%; /* Adjust the height of the background */
         z-index: -1; /* Ensure the background stays behind other content */
+        background-repeat: no-repeat;
       }
 
       .signinMain::before {

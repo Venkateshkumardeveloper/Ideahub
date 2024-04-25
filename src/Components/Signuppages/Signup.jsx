@@ -1,4 +1,6 @@
 
+
+
 import React, { useState, useEffect } from 'react';
 import style from './signup.module.css';
 import Logoimg from "../../assests/image.png";
@@ -63,7 +65,13 @@ const Signup = () => {
     setShowWhiteCard(false);
     setAccountCreated(false);
   }
-  
+  // const handleResendOTP = () => {
+  //   const generatedOTP = generateOTP();
+  //   setOtp(generatedOTP);
+  //   // Call API to resend OTP to the user's email
+  //   // Placeholder code for sending OTP via email
+  //   console.log(`Resending OTP ${generatedOTP} to ${email}`);
+  // };
     const handleWhiteCardSubmit = (e) => {
     e.preventDefault();
     // Placeholder for handling OTP submission
@@ -110,6 +118,7 @@ const Signup = () => {
 
   return (
     <div className={style.signupMain}>
+      <div className={style.signupSubdiv}></div>
       <div className={style.signupLeftDiv}>
         <div className={style.signupBox}>
           <div className={style.LogoAndTxtBox}>
@@ -119,6 +128,10 @@ const Signup = () => {
               </div>
               <div className={style.txt}>
                 <img src={ideahub} alt="ideahub_logo" />
+                {/* <span className={style.thick}>I</span>
+                <span>dea </span>
+                <span className={style.thick}>H</span>
+                <span>ub</span> */}
               </div>
             </div>
             <div className={style.signupTxtDiv}>
@@ -127,7 +140,8 @@ const Signup = () => {
             </div>
           </div>
           <div className={style.inputParDiv}>
-            <form action="" onSubmit={handleSubmit}><FormControl className={style.signupInput} size='medium' sx={{ width: '50ch', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
+            <form action="" onSubmit={handleSubmit}>
+              <FormControl className={style.signupInput} size='medium' sx={{ width: '100%', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
               <label htmlFor="nameSignup">
                 <span className={style.starMark}>*</span>
                 <span>Full Name</span>
@@ -142,7 +156,7 @@ const Signup = () => {
                 inputProps={{ 'aria-label': 'Name' }}
               />
             </FormControl>
-            <FormControl className={style.signupInput} size='medium' sx={{ width: '50ch', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
+            <FormControl className={style.signupInput} size='medium' sx={{ width: '100%', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
               <label htmlFor="emailSignup">
                 <span className={style.starMark}>*</span>
                 <span>Email</span>
@@ -158,7 +172,7 @@ const Signup = () => {
                 inputProps={{ 'aria-label': 'email' }}
               />
             </FormControl>
-            <FormControl className={style.signupInput} size='medium' sx={{ width: '50ch', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
+            <FormControl className={style.signupInput} size='medium' sx={{ width: '100%', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
       <label htmlFor="mobileSignup">
         <span className={style.starMark}>*</span>
         <span>Mobile Number</span>
@@ -175,7 +189,8 @@ const Signup = () => {
         inputProps={{ 'aria-label': 'mobile' }}
       />
     </FormControl>
-            <FormControl className={style.signupInput} size='medium' sx={{ width: '50ch', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
+ 
+            <FormControl className={style.signupInput} size='medium' sx={{ width: '100%', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
               <label htmlFor="outlined-adornment-password">
                 <span className={style.starMark}>*</span>
                 <span>Password</span>
@@ -202,7 +217,7 @@ const Signup = () => {
                 label="Password"
               />
             </FormControl>
-            <FormControl className={style.signupInput} size='medium' sx={{ width: '50ch', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
+            <FormControl className={style.signupInput} size='medium' sx={{ width: '100%', '@media (max-width: 600px)': { width: '100%' } }} variant="standard">
               <label htmlFor="outlined-adornment-password">
                 <span className={style.starMark}>*</span>
                 <span>Confirm Password</span>
